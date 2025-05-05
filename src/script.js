@@ -3,18 +3,19 @@ let people = ["Anna", "Maria", "Suzanne"];
 
 export function initSearch(people) {
   // rör ej denna rad
+
   // Hämta HTML-element
-  let searchInput = document.getElementById("searchInput");
-  let searchBtn = document.getElementById("searchBtn");
-  let resultDisplay = document.getElementById("resultDisplay");
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const resultDisplay = document.getElementById("resultDisplay");
 
   // Lägg till en klickhändelse på "Sök"-knappen
   searchBtn.addEventListener("click", () => {
     // 1. Hämta texten i searchInput.value
-    let name = searchInput.value;
+    const name = searchInput.value;
 
     // 2. Skapa en boolean för found
-    let found = false;
+    const found = false;
 
     // 3. Loopa igenom people-arrayen
     for (let person of people) {
@@ -28,7 +29,7 @@ export function initSearch(people) {
 
     // 6. Om du efter loopen inte hittat något, skriv ut "Namn hittades inte."
     if (!found) {
-      resultDisplay.innerHTML = "Namn hittades inte" + name;
+      resultDisplay.innerHTML = "Namn hittades inte";
     }
   });
 }
